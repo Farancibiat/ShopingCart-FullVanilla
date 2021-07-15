@@ -9,41 +9,45 @@
     <title>Ecomsur test</title>
   </head>
   <body>
+    
     <div class="content">
+
+    <!-- Responsive Navbar -->
+
       <div class="menu" id="myMenu">
         <a href="#" class="logo">Chilote MovieRental</a>
         <a href="#" class="item">Home</a>
-        <a href="./carrito.html" class="item">Ver Carrito</a>
+        <a href="./carrito.html" class="item">View Cart</a>
         <a href="#" class="item">Contact</a>
         <a href="javascript:void(0);" class="toggler" onclick="respBehavior()">
           <img src="./img/hamburguer.png" width="30" />
-        </a>
-        
+        </a>    
       </div>
-      <div class="searchBar">SearchBar</div>
-      <div class="sideBar">SideBar info</div>
+
+      <!-- SearchBar -->
+      <div class="searchBar">
+        <h1>Search your movie</h1>
+        <form >
+          <label for="searchText">Búsqueda por nombre</label>
+          <input name="searchText" type="text" placeholder="e.g: Forest Gump" required />
+          <input type="button" name="Submit" value="Search" onclick="loadSearch()"/>
+        </form>
+
+      </div>
+      
+      <!-- Sidebar -->
+      <div class="sideBar">
+        <h1>Recomendations</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex neque corporis cumque laboriosam illum modi perspiciatis nihil magnam nulla, ut cum possimus mollitia culpa beatae repellat non labore qui similique!</p>
+        <h2> Ads</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime voluptatum necessitatibus quidem enim accusamus inventore odit? Et ratione quidem qui error. Similique eveniet possimus fuga dolorum repudiandae soluta ipsum sed.</p>
+      </div>
+
+      <!-- Search Results -->
       <div class="results">
-        <div class="results-col">
-          <p>Col1</p>
-          <p>linea2</p>
-        </div>
-        <div class="results-col">Col2</div>
-        <div class="results-col">Col3</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
-        <div class="results-col">Col4</div>
+        <h3 id="resultText">Para comenzar, ingrese una búsqueda...</h3>
       </div>
-      <footer>footer</footer>
+      <div class="footer"><p>Sitio desarrollado por <a href="http://farancibiat.cl" target="_blank">Felipe Arancibia</a>, 2021.</p></div>
     </div>
 
     <script src="app.js"></script>

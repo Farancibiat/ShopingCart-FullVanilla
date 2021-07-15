@@ -35,7 +35,7 @@ function loadSearchOnPress(e) {
 function loadSearch() {
   let text = document.getElementsByName("searchText")[0].value;
   if (text.localeCompare("") !== 0) {
-    fetch(`http://www.omdbapi.com/?apikey=4fa12616&s=${text}`)
+    fetch(`https://www.omdbapi.com/?apikey=4fa12616&s=${text}`)
       .then((response) => response.json())
       .then((search) => {
         if (search.Error) {

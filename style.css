@@ -174,6 +174,9 @@ body *::-webkit-scrollbar-track {
 }
 
 /* Shopping Cart Table design */
+table{
+  width:100%;
+}
 table,
 th,
 td {
@@ -278,4 +281,8 @@ th {
     display: block;
     text-align: left;
   }
+  td,
+th {
+  padding: 10px;
+}
 }

@@ -4,26 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
-<title>Ecomsur test</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Ecomsur test</title>
   </head>
   <body>
-    
     <div class="content">
-
-    <!-- Responsive Navbar -->
+      <!-- Responsive Navbar -->
 
       <div class="menu" id="myMenu">
         <a href="./index.html" class="logo">Chilote MovieRental</a>
-        <a href="" class="item" onclick="event.preventDefault();resetCart()">Reset Cart</a>
-        <a href="./carrito.html" class="item">Cart <span id="cartLength">0</span></a>
+        <a href="" class="item" onclick="event.preventDefault();resetCart()"
+          >Reset Cart</a
+        >
+        <a href="./carrito.html" class="item"
+          >Cart <span id="cartLength">0</span></a
+        >
         <a href="javascript:void(0);" class="toggler" onclick="respBehavior()">
           <img src="./img/hamburguer.png" width="30" />
-        </a>    
+        </a>
       </div>
 
       <!-- SearchBar -->
@@ -31,16 +36,25 @@
         <h1>Search your movie</h1>
         <form onsubmit="event.preventDefault();loadSearch()">
           <label for="searchText">Búsqueda por nombre</label>
-          <input name="searchText" type="text" placeholder="e.g: Forest Gump" required />
+          <input
+            name="searchText"
+            type="text"
+            placeholder="e.g: Forest Gump"
+            required
+          />
           <input type="submit" name="Submit" value="Search" />
         </form>
-
       </div>
-      
+
       <!-- Sidebar -->
       <div class="sideBar">
         <h1>Recomendations</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex neque corporis cumque laboriosam illum modi perspiciatis nihil magnam nulla, ut cum possimus mollitia culpa beatae repellat non labore qui similique!</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex neque
+          corporis cumque laboriosam illum modi perspiciatis nihil magnam nulla,
+          ut cum possimus mollitia culpa beatae repellat non labore qui
+          similique!
+        </p>
       </div>
 
       <!-- Search Results -->
@@ -48,9 +62,14 @@
         <h3 id="resultText">Para comenzar, ingrese una búsqueda...</h3>
       </div>
 
-
       <!-- Footer -->
-      <div class="footer"><p>Sitio desarrollado por <a href="http://farancibiat.cl" target="_blank">Felipe Arancibia</a>, 2021.</p></div>
+      <div class="footer">
+        <p>
+          Sitio desarrollado por
+          <a href="http://farancibiat.cl" target="_blank">Felipe Arancibia</a>,
+          2021.
+        </p>
+      </div>
     </div>
 
     <script src="./app.js"></script>

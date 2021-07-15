@@ -1,4 +1,6 @@
 let shoppingCart = {};
+const results = document.getElementById("results");
+const movies = document.getElementById("movies");
 
 document.addEventListener('DOMContentLoaded', e => {
   
@@ -14,9 +16,14 @@ document.addEventListener('DOMContentLoaded', e => {
   if(window.location.pathname.localeCompare("/carrito.html")===0){
   console.log(shoppingCart)
   drawCartList();
+  movies.addEventListener("click", (e) => {
+    console.log(e.target)
+    modifyCart(e)
+    drawCartList();
+  });
   }
 });
-const results = document.getElementById("results");
+
 
 function loadSearchOnPress(e) {
   if (e.key === "Enter") {
@@ -71,35 +78,43 @@ function drawResults(results) {
 }
 
 function drawCartList() {
-  tabledata="";
+  let tabledata="";
+  let total=0;
   Object.keys(shoppingCart).forEach((movie, index) => {
     movieRow=`<tr>
       <th>${index+1}</th>
       <td>${shoppingCart[movie].title}</td>
+      <td class="muted">${shoppingCart[movie].id}</td>
       <td>${shoppingCart[movie].cant}</td>
       <td>
         <button class="add">+</button>
         <button class="quit">-</button>
+        <button class="delete">Delete</button>
       </td>
       <td>$ ${shoppingCart[movie].cant*10} USD</td>
      </tr>`;
      tabledata+=movieRow;
+     total=total+parseInt(shoppingCart[movie].cant)*10
   });
   document.getElementById("movies").innerHTML = tabledata;
+  document.getElementById("total").innerHTML = `$${total} USD`;
+  if(Object.keys(shoppingCart).length===0)
+    document.getElementById("msg").innerHTML = `Empty Shopping Cart, visit <a href="./index.html">Home</a> to buy some movies`;
+  else
+  document.getElementById("msg").innerHTML = `Visit <a href="./index.html">Home</a> to add more movies`;
 }
   
-function addMovie(movieObject) {
-  favorites.push(movieObject);
-  favorites.array.forEach((element) => {
-    console.log(element);
-  });
-}
+
 function resetCart(){
   
   if (localStorage.getItem('shoppingCart')) {
     localStorage.removeItem('shoppingCart')
     shoppingCart = {};
     loadCartLength();
+    if(window.location.pathname.localeCompare("/carrito.html")===0){
+      drawCartList();
+    }
+
 }
 
 }
@@ -132,5 +147,31 @@ function addToCart(event) {
     loadCartLength();
     event.stopPropagation();
   }
+  localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
+}
+
+function modifyCart(event) {
+  if (event.target.classList.contains("quit")) {
+    const selectedItem = event.target.parentElement.parentElement;
+    if(parseInt(shoppingCart[selectedItem.querySelector('.muted').textContent].cant)>=1){
+    shoppingCart[selectedItem.querySelector('.muted').textContent].cant-=1;
+    }
+    else{
+      alert("The Units cant be less than Zero")
+    }
+  }
+  if (event.target.classList.contains("add")) {
+    const selectedItem = event.target.parentElement.parentElement;
+    
+    shoppingCart[selectedItem.querySelector('.muted').textContent].cant+=1;
+  
+  }
+  if (event.target.classList.contains("delete")) {
+    const selectedItem = event.target.parentElement.parentElement;
+    delete shoppingCart[selectedItem.querySelector('.muted').textContent]
+    loadCartLength();
+  }
+    event.stopPropagation();
+  
   localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Ecomsur test</title>
+  </head>
+  <body>
+    
+    <div class="cartContent">
+
+    <!-- Responsive Navbar -->
+
+      <div class="menu" id="myMenu">
+        <a href="./index.html" class="logo">Chilote MovieRental</a>
+        <a href="" class="item" onclick="cleanCart()">Reset Cart</a>
+        <a href="./carrito.html" class="item">Cart <span id="cartLength">0</span></a>
+        <a href="./index.html" class="item">Home</a>
+        <a href="javascript:void(0);" class="toggler" onclick="respBehavior()">
+          <img src="./img/hamburguer.png" width="30" />
+        </a>    
+      </div>
+
+      <!-- Shopping Information -->
+      <div class="shoppingInfo">
+        <h1>Información de compra</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab ullam odit tempore voluptates labore, harum explicabo! Natus consectetur omnis saepe nobis ipsam nam illum, nostrum, quasi ullam quas incidunt doloribus.</p>
+        
+      </div>
+      
+     
+      <!-- Cart -->
+      <div class="cart" id="cart">
+        <h1>Cart<h1>
+          <table class="table" bordered>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Units</th>
+              <th scope="col">Modify</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="movies">
+            <th scope="col">#</th>
+              <th scope="col"> </th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tbody>
+          <tfoot id="footer">
+            <tr id="footer">
+              
+            </tr>
+          </tfoot>
+          </table>
+          <p>Empty Shopping Cart, visit <a href="./index.html">Home</a> to buy some movies</p>
+      </div>
+
+
+      <!-- Footer -->
+      <div class="footer"><p>Sitio desarrollado por <a href="http://farancibiat.cl" target="_blank">Felipe Arancibia</a>, 2021.</p></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
